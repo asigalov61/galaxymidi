@@ -1,35 +1,7 @@
----
-license: cc-by-nc-sa-4.0
-task_categories:
-- audio-to-audio
-- audio-classification
-- sentence-similarity
-language:
-- en
-tags:
-- Galaxy
-- MIDI
-- dataset
-- music
-- embeddings
-- features
-- lyrics
-- karaoke
-- music-genres
-- huge
-- enormous
-- comprehensive
-- galaxy
-- extra-large
-pretty_name: galaxymidi
-size_categories:
-- 10M<n<100M
----
-
 # Galaxy MIDI Dataset
 ## The largest and most comprehensive MIDI dataset in the known galaxy
 
-![Galaxy-MIDI-Dataset](https://cdn-uploads.huggingface.co/production/uploads/64820d166e41cac337e0ccb8/QFV6Y8uUoujXoAKSvINjm.png)
+<img width="1536" height="1024" alt="Galaxy-MIDI-Dataset" src="https://github.com/user-attachments/assets/a4f9fc8f-ee76-4b25-b6bf-9b83010156da" />
 
 ***
 
