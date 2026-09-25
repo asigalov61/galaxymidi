@@ -142,21 +142,21 @@ fast_parallel_extract.fast_parallel_extract()
 import galaxymidi
 
 # Load one of the curated file lists
-galaxymidi.load_jsonl('Files Lists/clean_midis_files_list.jsonl)
+all_midis_files_list = galaxymidi.load_jsonl()
 ```
 
 ```python
 import galaxymidi
 
 # Load the pre-computed Galaxy embeddings (midisimx format)
-embeddings = galaxymidi.load_embeddings(Embeddings/galaxy_midi_dataset_embeddings_1_2_1_2_weighted.bin')
+embeddings = galaxymidi.load_embeddings()
 ```
 
 ```python
 import galaxymidi
 
 # Load the pre-computed comprehensive MIDI features
-features = galaxymidi.load_features('Features/galaxy_midi_features.ldmb')
+features = galaxymidi.load_features()
 ```
 
 To audition the MIDIs, render them with any of the bundled SoundFonts using your favorite synthesizer (e.g., FluidSynth).
@@ -218,6 +218,8 @@ Galaxy MIDI Dataset
 ***
 
 ## Dataset statistics
+
+Please see [Galaxy MIDI Dataset Technical Report](https://github.com/asigalov61/galaxymidi/tree/main/galaxymidi/report) for detailed stats and visualizations
 
 * 19893571 unique, standardized, and original MIDI files
 * 17190286 pre-computed comprehensive MIDI features
