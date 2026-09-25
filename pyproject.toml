@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "galaxymidi"
-version = "26.9.19"
+version = "26.9.20"
 description = "Galaxy MIDI Dataset"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
@@ -16,6 +16,7 @@ maintainers = [
 ]
 dependencies = [
   "midisimx",
+  "joblib",
   "midirenderer"
 ]
 
