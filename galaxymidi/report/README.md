@@ -1,12 +1,6 @@
-\# Galaxy MIDI Dataset Technical Report
+# Galaxy MIDI Dataset Technical Report
 
+***
 
-
-\*\*\*
-
-
-
-\### Project Los Angeles
-
-\### Tegridy Code 2026
-
+### Project Los Angeles
+### Tegridy Code 2026
