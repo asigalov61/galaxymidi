@@ -146,7 +146,7 @@ galaxymidi.load_jsonl('Files Lists/clean_midis_files_list.jsonl)
 ```
 
 ```python
-import midisimx
+import galaxymidi
 
 # Load the pre-computed Galaxy embeddings (midisimx format)
 embeddings = galaxymidi.load_embeddings(Embeddings/galaxy_midi_dataset_embeddings_1_2_1_2_weighted.bin')
