@@ -313,7 +313,7 @@ def load_embeddings(embeddings_bin_file_path='./Galaxy-MIDI-Dataset/Embeddings/g
 
 ###################################################################################
 
-def get_midi_features(input_midi):
+def extract_midi_features(input_midi):
 
     try:
         raw_score = TMIDIX.midi2single_track_ms_score(input_midi, do_not_check_MIDI_signature=True)
@@ -391,8 +391,6 @@ def get_midi_features(input_midi):
             #======================================================================================
             
             cscore = TMIDIX.chordify_score([1000, fixed_escore_notes])
-
-            print(cscore)
     
             fixed_score = []
     
