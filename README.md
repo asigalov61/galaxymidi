@@ -142,7 +142,7 @@ fast_parallel_extract.fast_parallel_extract()
 import galaxymidi
 
 # Load one of the curated file lists
-all_midis_files_list = galaxymidi.load_jsonl()
+all_midis_files_list = galaxymidi.read_jsonl()
 ```
 
 ```python
@@ -159,8 +159,13 @@ import galaxymidi
 features = galaxymidi.load_features()
 ```
 
-To audition the MIDIs, render them with any of the bundled SoundFonts using your favorite synthesizer (e.g., FluidSynth).
 
+```python
+import galaxymidi
+
+# To audition the MIDIs, render them as such
+output_wav_file = galaxymidi.render_midi('my_midi.mid')
+```
 ***
 
 ## Dataset structure
