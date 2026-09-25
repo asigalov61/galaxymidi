@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=80.9.0", "wheel", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "galaxymidi"
+version = "26.9.19"
+description = "Galaxy MIDI Dataset"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [
+  { name = "Alex Lev", email = "alexlev61@proton.me" }
+]
+maintainers = [
+  { name = "Alex Lev", email = "alexlev61@proton.me" }
+]
+dependencies = [
+  "midisimx",
+  "midirenderer"
+]
+
+keywords = [
+	"MIDI",
+	"music",
+	"music AI",
+	"MIR",
+	"dataset",
+	"MIDi dataset",
+	"symbolic music",
+	"MIDI similarity",
+	"music similarity",
+	"cosine somilarity",
+	"MIDI search",
+	"music search",
+        "music information retrieval",
+        "music analysis",
+        "MIDI analysis"
+]
+
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Education",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Sound/Audio",
+  "Topic :: Multimedia :: Sound/Audio :: MIDI",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Environment :: Console",
+  "Natural Language :: English",
+  "Typing :: Typed"
+]
+
+requires-python = ">=3.8"
+
+[project.readme]
+file = "galaxymidi/README.md"
+content-type = "text/markdown"
+
+[project.urls]
+Homepage = "https://github.com/asigalov61/galaxymidi"
+Report = "https://github.com/asigalov61/galaxymidi/tree/main/galaxymidi/report"
+Documentation = "https://github.com/asigalov61/galaxymidi/tree/main/galaxymidi/docs"
+Embeddings = "https://huggingface.co/datasets/projectlosangeles/midisimx-embeddings"
+Samples = "https://huggingface.co/datasets/projectlosangeles/midisimx-samples"
+Issues = "https://github.com/asigalov61/galaxymidi/issues"
+Discussions = "https://github.com/asigalov61/galaxymidi/discussions"
+Dataset = "https://huggingface.co/datasets/projectlosangeles/Galaxy-MIDI-Dataset"
+SoundCloud = "https://soundcloud.com/aleksandr-sigalov-61/"

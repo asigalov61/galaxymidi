@@ -1,0 +1,5 @@
+include galaxymidi/README.md
+recursive-include galaxymidi/ *
+recursive-include galaxymidi/report *
+recursive-include galaxymidi/docs *
+recursive-include galaxymidi/artwork *
