@@ -22,6 +22,7 @@
 - [Overview](#overview)
 - [Key features](#key-features)
 - [Installation and use](#installation-and-use)
+- [Documentation](#documentation)
 - [Dataset structure](#dataset-structure)
 - [Dataset statistics](#dataset-statistics)
 - [Dataset integrity verification info](#dataset-integrity-verification-info)
@@ -79,7 +80,7 @@ The curated **Files Lists** provide instant access to all major subsets without 
 
 ## Key features
 
-* 🌌 **Enormous scale** — 19,893,571 unique MIDI files / 152GB: the largest MIDI dataset of its kind
+* 🌌 **Galaxy scale** — 19,893,571 unique MIDI files / 152GB: the largest MIDI dataset of its kind
 * 🎼 **Unique, standardized, and original** — fully deduplicated and standardized corpus
 * 🎛️ **17,190,286 pre-computed comprehensive MIDI features** — no extraction pipeline required
 * 🧬 **15,591,559 pre-computed midisimx embeddings** — ready for similarity search, retrieval, and downstream modeling
@@ -98,7 +99,8 @@ The curated **Files Lists** provide instant access to all major subsets without 
 ## Installation and use
 
 **Requirements:** Python 3.x with pip. Please note that the dataset size is **152GB** compressed, so make sure you have sufficient disk space and a stable internet connection. A multi-core machine is recommended for fast parallel extraction.
-**Dependencies** Please see official [midisimx](https://github.com/asigalov61/midisimx) repo for detailed information
+
+**Dependencies:** Please see official [midisimx](https://github.com/asigalov61/midisimx) repo for detailed information.
 
 ### 1) Install
 
@@ -159,13 +161,21 @@ import galaxymidi
 features = galaxymidi.load_features()
 ```
 
-
 ```python
 import galaxymidi
 
 # To audition the MIDIs, render them as such
 output_wav_file = galaxymidi.render_midi('my_midi.mid')
 ```
+
+***
+
+## Documentation
+
+[galaxymidi API Reference](https://github.com/asigalov61/galaxymidi/raw/refs/heads/main/galaxymidi/docs/API_REFERENCE.md)
+
+[galaxymidi API Functions Index](https://github.com/asigalov61/galaxymidi/raw/refs/heads/main/galaxymidi/docs/API_FUNCTIONS_INDEX.md)
+
 ***
 
 ## Dataset structure
