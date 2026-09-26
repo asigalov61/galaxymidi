@@ -2,13 +2,14 @@
 
 ***
 
-...
+## [galaxymidi API Reference](./API_REFERENCE.md)
+## [galaxymidi API Reference](./API_FUNCTIONS_INDEX.md)
 
 ***
 
-### [midisimx API Reference](https://github.com/asigalov61/midisimx/blob/main/midisimx/docs/api_reference.md)
+## [midisimx API Reference](https://github.com/asigalov61/midisimx/blob/main/midisimx/docs/api_reference.md)
 
-### [midisimx API Functions Index](https://github.com/asigalov61/midisimx/blob/main/midisimx/docs/api_functions_index.md)
+## [midisimx API Functions Index](https://github.com/asigalov61/midisimx/blob/main/midisimx/docs/api_functions_index.md)
 
 ***
 
