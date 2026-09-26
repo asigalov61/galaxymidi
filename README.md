@@ -172,9 +172,9 @@ output_wav_file = galaxymidi.render_midi('my_midi.mid')
 
 ## Documentation
 
-[galaxymidi API Reference](https://github.com/asigalov61/galaxymidi/raw/refs/heads/main/galaxymidi/docs/API_REFERENCE.md)
+[galaxymidi API Reference](https://github.com/asigalov61/galaxymidi/blob/main/galaxymidi/docs/API_REFERENCE.md)
 
-[galaxymidi API Functions Index](https://github.com/asigalov61/galaxymidi/raw/refs/heads/main/galaxymidi/docs/API_FUNCTIONS_INDEX.md)
+[galaxymidi API Functions Index](https://github.com/asigalov61/galaxymidi/blob/main/galaxymidi/docs/API_FUNCTIONS_REFERENCE.md)
 
 ***
 
