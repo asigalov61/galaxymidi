@@ -213,11 +213,11 @@ def parallel_extract(tar_path: str = './Galaxy-MIDI-Dataset-CC-BY-NC-SA.tar.gz',
     max_workers : int, optional
         Maximum number of worker threads used for concurrent file writes. Higher
         values increase parallelism but also increase contention and resource use.
-        Choose a value appropriate for your system and storage device. Default: 256.
+        Choose a value appropriate for your system and storage device. Default: 64.
     batch_size : int, optional
         Number of scheduled write futures to accumulate before waiting for them to
         complete. This limits the number of in-flight futures and the memory used
-        to buffer file contents. Default: 16384.
+        to buffer file contents. Default: 8192.
     
     Returns
     -------
