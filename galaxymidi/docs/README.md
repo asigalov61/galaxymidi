@@ -3,7 +3,8 @@
 ***
 
 ## [galaxymidi API Reference](./API_REFERENCE.md)
-## [galaxymidi API Reference](./API_FUNCTIONS_INDEX.md)
+
+## [galaxymidi API Functions Index](./API_FUNCTIONS_INDEX.md)
 
 ***
 
