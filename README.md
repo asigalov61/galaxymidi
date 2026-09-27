@@ -1,17 +1,6 @@
+
 # Galaxy MIDI Dataset
 ## The largest and most comprehensive MIDI dataset in the known galaxy
-
-<img width="1536" height="1024" alt="Galaxy-MIDI-Dataset" src="https://github.com/user-attachments/assets/a4f9fc8f-ee76-4b25-b6bf-9b83010156da" />
-
-***
-
-![License](https://img.shields.io/badge/License-CC--BY--NC--SA_4.0-lightgrey)
-![Size](https://img.shields.io/badge/Size-152_GB-blue)
-![MIDI files](https://img.shields.io/badge/MIDI_files-19.8M-green)
-
-***
-
-> **19,893,571 unique, standardized MIDI files with pre-computed features, midisimx embeddings, lyrics, karaoke data, and genre labels, ready for Music AI and MIR.**
 
 ***
 
@@ -22,6 +11,16 @@
     width="100%"
   />
 </p>
+
+***
+
+![License](https://img.shields.io/badge/License-CC--BY--NC--SA_4.0-lightgrey)
+![Size](https://img.shields.io/badge/Size-152_GB-blue)
+![MIDI files](https://img.shields.io/badge/MIDI_files-19.8M-green)
+
+***
+
+> **19,893,571 unique, standardized MIDI files with pre-computed features, midisimx embeddings, lyrics, karaoke data, and genre labels, ready for Music AI and MIR.**
 
 ***
 
