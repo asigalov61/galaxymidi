@@ -64,7 +64,11 @@ except Exception:
     HAVE_TQDM = False
 
 try:
-    from . import TMIDIX                        # optional: chord decode + MIDI extraction
+    try:
+        from . import TMIDIX                        # optional: chord decode + MIDI extraction
+    except:
+        pass
+    import TMIDIX
     TMIDIX.set_no_warning(True)
     HAVE_TMIDIX = True
 except Exception:
@@ -565,9 +569,6 @@ def _md5_file(path, chunk=1 << 20):
 
 def extract_features_from_midi(input_midi):
     """Single-MIDI feature extraction (TMIDIX pipeline) — parallel-friendly."""
-    
-    import TMIDIX
-    from collections import Counter
 
     dict_template = {'aligned': None,
                      'all_chords_good': None,
@@ -591,7 +592,7 @@ def extract_features_from_midi(input_midi):
                     }
 
     try:
-    
+        
         raw_score = TMIDIX.midi2single_track_ms_score(input_midi, do_not_check_MIDI_signature=True)
         
         data = TMIDIX.advanced_score_processor(raw_score,
