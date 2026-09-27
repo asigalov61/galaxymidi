@@ -253,8 +253,12 @@ Please see [Galaxy MIDI Dataset Technical Report](https://github.com/asigalov61/
 
 ## Dataset integrity verification info
 
-* MD5: e23f34866b946ea56c989d24eb9ae48b
-* SHA256: 1c0aade6ff554a268230ec0404b04ccbf91e386058db109a1845115c510eb9aa
+```Galaxy-MIDI-Dataset.tar.gz```
+
+* MD5: ...
+* SHA256: ...
+
+'''
 
 ***
 
