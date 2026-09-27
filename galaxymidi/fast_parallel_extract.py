@@ -59,7 +59,7 @@ import time
 
 ###################################################################################
 
-def fast_parallel_extract(archive_path='./Galaxy-MIDI-Dataset/Galaxy-MIDI-Dataset-CC-BY-NC-SA.tar.gz', 
+def fast_parallel_extract(archive_path='./Galaxy-MIDI-Dataset-CC-BY-NC-SA.tar.gz', 
                           output_dir='./', 
                           pigz_procs=256
                          ):
@@ -76,7 +76,7 @@ def fast_parallel_extract(archive_path='./Galaxy-MIDI-Dataset/Galaxy-MIDI-Datase
     ----------
     archive_path : str, optional
         Path to the tar.gz archive to extract. Default:
-        `'./Galaxy-MIDI-Dataset/Galaxy-MIDI-Dataset-CC-BY-NC-SA.tar.gz'`.
+        `'./Galaxy-MIDI-Dataset-CC-BY-NC-SA.tar.gz'`.
     output_dir : str, optional
         Destination directory where archive contents will be extracted. The
         directory is created if it does not already exist. Default:
