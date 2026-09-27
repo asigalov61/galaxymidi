@@ -15,6 +15,16 @@
 
 ***
 
+<p>
+  <img
+    src="https://asigalov61.github.io/countdown/countdown.svg"
+    alt="Galaxy MIDI Dataset countdown — Coming January 1, 2027"
+    width="100%"
+  />
+</p>
+
+***
+
 ## Contents
 
 - [Introduction](#introduction)
@@ -28,7 +38,6 @@
 - [Dataset integrity verification info](#dataset-integrity-verification-info)
 - [License](#license)
 - [Citations](#citations)
-- [Acknowledgments](#acknowledgments)
 
 ***
 
