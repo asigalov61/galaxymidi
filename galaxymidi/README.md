@@ -46,7 +46,7 @@ The entire dataset is released under the **CC BY-NC-SA 4.0** license, making it 
 
 ## Abstract
 
-We present the Galaxy MIDI Dataset — to our knowledge, the largest and most comprehensive symbolic music dataset ever released. The dataset consists of 19,893,571 unique, standardized, and original MIDI files (152 GB), accompanied by rich pre-computed annotations and derived data: 17,190,286 comprehensive MIDI feature sets, 15,591,559 embeddings computed with the midisimx embedding model, 9,361,365 file identifications, 89,569 files with genre, artist, and song labels, 99,475 karaoke MIDIs, and 47,069 files with corresponding English lyrics. Curated subsets include 2,111,480 MIDIs with monophonic melodies, 754,092 solo melody MIDIs, and 586,398 solo drum-track MIDIs. The dataset ships with eight curated JSONL file lists for memory-efficient subsetting, four production-grade soundfonts for rendering and auditioning, and full integrity verification via MD5 and SHA256 checksums. The entire corpus is released under CC BY-NC-SA 4.0 together with a lightweight companion Python package (galaxymidi) that handles downloading and fast parallel extraction in a few lines of code. The Galaxy MIDI Dataset is designed to support music information retrieval (MIR), symbolic music generation, music understanding, representation learning, and large-scale pretraining for Music AI.
+We present the Galaxy MIDI Dataset — to our knowledge, the largest and most comprehensive symbolic music dataset ever released. The dataset consists of 19,893,571 unique, standardized, and original MIDI files (152 GB), accompanied by rich pre-computed annotations and derived data: 19,893,571 comprehensive MIDI feature sets, 15,591,559 embeddings computed with the midisimx embedding model, 9,361,365 file identifications, 89,569 files with genre, artist, and song labels, 99,475 karaoke MIDIs, and 47,069 files with corresponding English lyrics. Curated subsets include 2,111,480 MIDIs with monophonic melodies, 754,092 solo melody MIDIs, and 586,398 solo drum-track MIDIs. The dataset ships with eight curated JSONL file lists for memory-efficient subsetting, four production-grade soundfonts for rendering and auditioning, and full integrity verification via MD5 and SHA256 checksums. The entire corpus is released under CC BY-NC-SA 4.0 together with a lightweight companion Python package (galaxymidi) that handles downloading and fast parallel extraction in a few lines of code. The Galaxy MIDI Dataset is designed to support music information retrieval (MIR), symbolic music generation, music understanding, representation learning, and large-scale pretraining for Music AI.
 
 ***
 
@@ -57,7 +57,7 @@ The dataset is organized into a small number of self-describing top-level direct
 | Directory / file | Description | Scale |
 | :--- | :--- | :--- |
 | `MIDIs` | The complete corpus of unique, standardized, original MIDI files | 19,893,571 files |
-| `Features` | Pre-computed comprehensive MIDI features, merged into a single container | 17,190,286 entries |
+| `Features` | Pre-computed comprehensive MIDI features, merged into a single container | 19,893,571 entries |
 | `Embeddings` | Pre-computed midisimx embeddings for the clean MIDI subset | 15,591,559 vectors |
 | `Files Lists` | Curated JSONL file lists for fast subsetting and streaming | 8 lists |
 | `Identified` | MIDI file identifications | 9,361,365 entries |
@@ -82,7 +82,7 @@ The curated **Files Lists** provide instant access to all major subsets without 
 
 * 🌌 **Galaxy scale** — 19,893,571 unique MIDI files / 152GB: the largest MIDI dataset of its kind
 * 🎼 **Unique, standardized, and original** — fully deduplicated and standardized corpus
-* 🎛️ **17,190,286 pre-computed comprehensive MIDI features** — no extraction pipeline required
+* 🎛️ **19,893,571 pre-computed comprehensive MIDI features** — no extraction pipeline required
 * 🧬 **15,591,559 pre-computed midisimx embeddings** — ready for similarity search, retrieval, and downstream modeling
 * 🔎 **9,361,365 identified MIDIs** — matched and identified files
 * 🎤 **99,475 karaoke MIDIs** and **47,069 MIDIs with aligned English lyrics**
@@ -237,7 +237,7 @@ Galaxy MIDI Dataset
 Please see [Galaxy MIDI Dataset Technical Report](https://github.com/asigalov61/galaxymidi/tree/main/galaxymidi/report) for detailed stats and visualizations
 
 * 19893571 unique, standardized, and original MIDI files
-* 17190286 pre-computed comprehensive MIDI features
+* 19893571 pre-computed comprehensive MIDI features
 * 15591559 pre-computed MIDI embeddings
 * 9361365 identified MIDI files
 * 2111480 MIDIs with monophonic melodies
