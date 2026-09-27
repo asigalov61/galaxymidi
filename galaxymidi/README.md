@@ -1,7 +1,13 @@
 # Galaxy MIDI Dataset
 ## The largest and most comprehensive MIDI dataset in the known galaxy
 
-<img width="1536" height="1024" alt="Galaxy-MIDI-Dataset" src="https://github.com/user-attachments/assets/a4f9fc8f-ee76-4b25-b6bf-9b83010156da" />
+<p>
+  <img
+    src="https://asigalov61.github.io/countdown/countdown.svg"
+    alt="Galaxy MIDI Dataset countdown — Coming January 1, 2027"
+    width="100%"
+  />
+</p>
 
 ***
 
