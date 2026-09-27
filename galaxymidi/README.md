@@ -6,7 +6,7 @@
 ***
 
 ![License](https://img.shields.io/badge/License-CC--BY--NC--SA_4.0-lightgrey)
-![File Type](https://img.shields.io/badge/Format-tar.gz-orange) ![Compressed Size](https://img.shields.io/badge/Compressed-144GB-red) ![Uncompressed Size](https://img.shields.io/badge/Uncompressed-329GB-blue)
+![File Type](https://img.shields.io/badge/Format-tar.gz-orange) ![Compressed Size](https://img.shields.io/badge/Compressed-154GB-red) ![Uncompressed Size](https://img.shields.io/badge/Uncompressed-330GB-blue)
 ![MIDI files](https://img.shields.io/badge/MIDI_files-19.8M-green)
 
 ***
@@ -97,7 +97,7 @@ The curated **Files Lists** provide instant access to all major subsets without 
 
 ## Installation and use
 
-**Requirements:** Python 3.x with pip. Please note that the dataset size is **152GB** compressed, so make sure you have sufficient disk space and a stable internet connection. A multi-core machine is recommended for fast parallel extraction.
+**Requirements:** Python 3.x with pip. Please note that the dataset size is **154GB** compressed and **330GB** uncompressed, so make sure you have sufficient disk space (~500GB) and a fast internet connection. A multi-core or a cloud supercomputer instance is recommended for the best experience.
 
 **Dependencies:** Please see official [midisimx](https://github.com/asigalov61/midisimx) repo for detailed information.
 
