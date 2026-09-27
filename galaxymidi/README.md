@@ -222,12 +222,18 @@ Galaxy MIDI Dataset
 ├── MIDIs
 │   └── ...
 └── SoundFonts
-    ├── Expressive Flute SSO-v1.2.sf2
-    ├── KBH-Real-Choir-V2.5.sf2
-    ├── Nice-Strings-PlusOrchestra-v1.6.sf2
-    └── SGM-v2.01-YamahaGrand-Guit-Bass-v2.7.sf2
+│   ├── Expressive Flute SSO-v1.2.sf2
+│   ├── KBH-Real-Choir-V2.5.sf2
+│   ├── Nice-Strings-PlusOrchestra-v1.6.sf2
+│   └── SGM-v2.01-YamahaGrand-Guit-Bass-v2.7.sf2
+└── Technical Report
+    ├── README.md
+    ├── report.txt
+    ├── stats_summary.json
+    └── plots
+        └── ...
 
-11 root directories, 19893571 MIDI files, 32 data files
+12 root directories, 19893571 MIDI files, 32 data files
 ```
 
 ***
