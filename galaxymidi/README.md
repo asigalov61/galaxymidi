@@ -264,23 +264,31 @@ Please see [Galaxy MIDI Dataset Technical Report](https://github.com/asigalov61/
 * File: ```Galaxy-MIDI-Dataset.tar.gz```
 * SHA256: ...
 
+---
+
 #### MIDI Features
 
 * File: ```galaxy_midi_features.ldmb```
 * SHA256: ae68d19facb311249204bec71fe6af96af18709de01591813697380147f72894
+
+---
 
 * File: ```galaxy_midi_dataset_19893571_midis_features_cc_by_nc_sa.ldmb```
 * SHA256: ae68d19facb311249204bec71fe6af96af18709de01591813697380147f72894
 
 #### MIDI Embeddings
 
-File: ```galaxy_midi_embeddings_1_2_1_2_weighted.bin```
-SHA256: 6f816f4f4bbf749e77b1e01ab1e56e76fe441db764140f4b438f9933af5cf726
-
-File: ```galaxy_midi_dataset_15591559_clean_midis_embeddings_1_2_1_2_weighted_cc_by_nc_sa.bin```
+* File: ```galaxy_midi_embeddings_1_2_1_2_weighted.bin```
 * SHA256: 6f816f4f4bbf749e77b1e01ab1e56e76fe441db764140f4b438f9933af5cf726
 
-File: ```galaxy_midi_dataset_15591559_clean_midis_embeddings_1_2_1_2_weighted_cc_by_nc_sa.npy```
+---
+
+* File: ```galaxy_midi_dataset_15591559_clean_midis_embeddings_1_2_1_2_weighted_cc_by_nc_sa.bin```
+* SHA256: 6f816f4f4bbf749e77b1e01ab1e56e76fe441db764140f4b438f9933af5cf726
+
+---
+
+* File: ```galaxy_midi_dataset_15591559_clean_midis_embeddings_1_2_1_2_weighted_cc_by_nc_sa.npy```
 * SHA256: be721de5ef866a784e976fa5a2b0de0c20adb23c3fd6ba5623fc70e5d42129ed
 
 ***
