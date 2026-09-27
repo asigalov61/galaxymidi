@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "galaxymidi"
-version = "26.9.27"
-description = "Galaxy MIDI Dataset"
+version = "26.9.31"
+description = "The largest and most comprehensive MIDI dataset in the known galaxy"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
 authors = [
@@ -35,7 +35,11 @@ keywords = [
 	"music search",
         "music information retrieval",
         "music analysis",
-        "MIDI analysis"
+        "MIDI analysis",
+        "galaxy-size",
+        "sota",
+        "mega-scale",
+	"galaxy"
 ]
 
 classifiers = [
