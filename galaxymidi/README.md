@@ -6,7 +6,7 @@
 ***
 
 ![License](https://img.shields.io/badge/License-CC--BY--NC--SA_4.0-lightgrey)
-![File Type](https://img.shields.io/badge/Format-tar.gz-orange) ![Compressed Size](https://img.shields.io/badge/Compressed-152GB-red) ![Uncompressed Size](https://img.shields.io/badge/Uncompressed-329GB-blue)
+![File Type](https://img.shields.io/badge/Format-tar.gz-orange) ![Compressed Size](https://img.shields.io/badge/Compressed-144GB-red) ![Uncompressed Size](https://img.shields.io/badge/Uncompressed-329GB-blue)
 ![MIDI files](https://img.shields.io/badge/MIDI_files-19.8M-green)
 
 ***
@@ -261,7 +261,7 @@ Please see [Galaxy MIDI Dataset Technical Report](https://github.com/asigalov61/
 #### Main archive
 
 * File: ```Galaxy-MIDI-Dataset.tar.gz```
-* SHA256: ...
+* SHA256: 0c43dc4ba8a2763aadb69a55d6fae617a718c1723283dacf0e8a44f11fe6cde8
 
 ---
 
