@@ -6,7 +6,7 @@
 ***
 
 ![License](https://img.shields.io/badge/License-CC--BY--NC--SA_4.0-lightgrey)
-![Size](https://img.shields.io/badge/Size-152_GB-blue)
+![File Type](https://img.shields.io/badge/Format-tar.gz-orange) ![Compressed Size](https://img.shields.io/badge/Compressed-152GB-red) ![Uncompressed Size](https://img.shields.io/badge/Uncompressed-305GB-blue)
 ![MIDI files](https://img.shields.io/badge/MIDI_files-19.8M-green)
 
 ***
@@ -28,7 +28,6 @@
 - [Dataset integrity verification info](#dataset-integrity-verification-info)
 - [License](#license)
 - [Citations](#citations)
-- [Acknowledgments](#acknowledgments)
 
 ***
 
