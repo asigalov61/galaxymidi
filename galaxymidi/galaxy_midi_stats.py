@@ -58,13 +58,14 @@ except Exception:
     HAVE_JOBLIB = False
 
 try:
-    from tqdm.auto import tqdm          # notebook-friendly progress bars
+    from tqdm import tqdm          # notebook-friendly progress bars
     HAVE_TQDM = True
 except Exception:
     HAVE_TQDM = False
 
 try:
-    import TMIDIX                        # optional: chord decode + MIDI extraction
+    from . import TMIDIX                        # optional: chord decode + MIDI extraction
+    TMIDIX.set_no_warning(True)
     HAVE_TMIDIX = True
 except Exception:
     TMIDIX = None
@@ -564,98 +565,257 @@ def _md5_file(path, chunk=1 << 20):
 
 def extract_features_from_midi(input_midi):
     """Single-MIDI feature extraction (TMIDIX pipeline) — parallel-friendly."""
-    try:
-        import TMIDIX
-        from collections import Counter
+    
+    import TMIDIX
+    from collections import Counter
 
+    dict_template = {'aligned': None,
+                     'all_chords_good': None,
+                     'all_events': None,
+                     'bad_durs': None,
+                     'clean_midi': None,
+                     'dupe_pitches': None,
+                     'features_counts': None,
+                     'karaoke': None,
+                     'lyric_events': None,
+                     'mono_mels': None,
+                     'other_events': None,
+                     'patch_change_events': None,
+                     'pitches_patches_counts': None,
+                     'run_time': None,
+                     'score_chords': None,
+                     'score_notes': None,
+                     'text_events': None,
+                     'text_lyric_latin': None,
+                     'tracks': None
+                    }
+
+    try:
+    
         raw_score = TMIDIX.midi2single_track_ms_score(input_midi, do_not_check_MIDI_signature=True)
+        
         data = TMIDIX.advanced_score_processor(raw_score,
                                                return_score_analysis=True,
                                                return_enhanced_score_notes=True,
                                                return_text_and_lyric_events=True,
-                                               apply_sustain=True)
+                                               apply_sustain=True
+                                              )
+    
         if len(data) == 3:
             analysis, raw_escore_notes, text_events = data
-        else:
-            analysis, raw_escore_notes = data
+    
+        elif len(data) == 2:
+            analysis = []
+    
+            if data[0][0]:
+                raw_escore_notes = data[0]
+            raw_escore_notes = data[1]
             text_events = []
-        if not raw_escore_notes:
-            return None
-
-        dscore = TMIDIX.delta_score_notes(raw_escore_notes, timings_clip_value=3999)
+    
+        else:
+            return {os.path.splitext(os.path.basename(input_midi))[0]: dict_template}
+    
+        if data[0][0][0] == 'Error':
+            raw_escore_notes = []
+    
+        #======================================================================================
+        
+        dscore = []
+        
+        if raw_escore_notes:
+            dscore = TMIDIX.delta_score_notes(raw_escore_notes, timings_clip_value=3999)
+            
         dtimes = [e[1] for e in dscore if e[1] != 0]
-        mc = Counter(dtimes).most_common(1)[0]
-        aligned = {'dtime_ms': mc[0], 'aligned': mc[1], 'total': len(dtimes)}
-        karaoke = {'text': len([e for e in text_events if e[0] == 'text_event']),
-                   'lyric': len([e for e in text_events if e[0] == 'lyric'])}
-        rt = TMIDIX.escore_notes_run_time(raw_escore_notes)
-        run_time = {'total': rt[0], 'last_time': rt[1]}
-
-        escore_notes = TMIDIX.augment_enhanced_score_notes(raw_escore_notes, timings_divider=32)
-        clean = [e for e in escore_notes if e[6] in TMIDIX.CLEAN_INSTRUMENTS and e[3] != 9]
-        clean_midi = {'clean': len(clean), 'total': len(escore_notes)}
-        dd = TMIDIX.remove_duplicate_pitches_from_escore_notes(escore_notes)
-        dupe_pitches = {'deduped': len(dd), 'total': len(escore_notes)}
-        bds = TMIDIX.escore_notes_durations_counter(dd, min_duration=128)
-        bad_durs = {'bad': bds[0], 'counts': bds[3] or {}, 'zero': bds[2], 'total': bds[1]}
-        fixed = TMIDIX.fix_escore_notes_durations(dd, min_notes_gap=0)
-
-        cscore = TMIDIX.chordify_score([1000, fixed])
-        fixed_score, bad_chords_counter = [], 0
+    
+        if dtimes:
+            mc_dtime_count = Counter(dtimes).most_common(1)[0]
+    
+        else:
+            mc_dtime_count = (0, 0)
+    
+        aligned = {'dtime_ms': mc_dtime_count[0],
+                   'aligned': mc_dtime_count[1],
+                   'total': len(dtimes)
+                  }
+    
+        #======================================================================================
+    
+        text_ev = [e for e in text_events if e[0] == 'text_event']
+        lyric_ev = [e for e in text_events if e[0] == 'lyric']
+    
+        karaoke = {'text': len(text_ev),
+                   'lyric': len(lyric_ev)
+                  }
+    
+        #======================================================================================
+        
+        run_time = [0, 0]
+        
+        if raw_escore_notes:
+            run_time = TMIDIX.escore_notes_run_time(raw_escore_notes)
+    
+        run_time = {'total': run_time[0], 'last_time': run_time[1]}
+    
+        #======================================================================================
+        escore_notes = []
+        if raw_escore_notes:
+            escore_notes = TMIDIX.augment_enhanced_score_notes(raw_escore_notes, timings_divider=32)
+    
+        #======================================================================================
+    
+        clean_escore_notes = [e for e in escore_notes if e[6] in TMIDIX.CLEAN_INSTRUMENTS and e[3] != 9]
+    
+        clean_midi = {'clean': len(clean_escore_notes), 'total': len(escore_notes)}
+    
+        #======================================================================================
+        dd_escore_notes = []
+        if escore_notes:
+            dd_escore_notes = TMIDIX.remove_duplicate_pitches_from_escore_notes(escore_notes)
+    
+        dupe_pitches = {'deduped': len(dd_escore_notes), 'total': len(escore_notes)}
+    
+        #======================================================================================
+    
+        bad_durs_stats = TMIDIX.escore_notes_durations_counter(dd_escore_notes, min_duration=128)
+    
+        bad_durs_stats = {'bad': bad_durs_stats[0],
+                          'count': bad_durs_stats[3],
+                          'zero': bad_durs_stats[2],
+                          'total': bad_durs_stats[1],
+                         }
+    
+        fixed_escore_notes = TMIDIX.fix_escore_notes_durations(dd_escore_notes, min_notes_gap=0)
+    
+        #======================================================================================
+        
+        cscore = TMIDIX.chordify_score([1000, fixed_escore_notes])
+    
+        if cscore is None:
+            cscore = []
+    
+        fixed_score = []
+    
+        bad_chords_counter = 0
+    
         for c in cscore:
+    
             tones_chord = sorted(set([e[4] % 12 for e in c if e[3] != 9]))
+    
             if tones_chord:
                 if tones_chord not in TMIDIX.ALL_CHORDS_SORTED:
                     tones_chord = TMIDIX.check_and_fix_tones_chord(tones_chord, use_full_chords=False)
+    
                     bad_chords_counter += 1
+    
             for e in c:
                 if e[4] % 12 in tones_chord or e[3] == 9:
                     fixed_score.append(e)
-
-        mono_mels = dict(TMIDIX.escore_notes_monoponic_melodies(
-            [e for e in fixed_score if e[3] != 9]))
-
+    
+        #======================================================================================
+    
+        mono_mels = TMIDIX.escore_notes_monoponic_melodies([e for e in fixed_score if e[3] != 9])
+    
+        mono_mels = {k: v for k, v in mono_mels}
+    
+        #======================================================================================
+    
         cscore = TMIDIX.chordify_score([1000, fixed_score])
-        score, pp_counter = [], Counter()
-        abs_time, pbar, bars_count, pc = 0, -1, 0, cscore[0]
+        
+        if cscore is None:
+            cscore = []
+            pc = []
+    
+        else:
+            pc = cscore[0]
+            
+        score = []
+    
+        pp_counter = Counter()
+    
+        abs_time = 0
+        pbar = -1
+        bars_count = 0
+    
         for c in cscore:
+            
             if abs_time // 128 > pbar:
                 bars_count += 1
                 pbar = abs_time // 128
+    
             tones_chord = sorted(set([e[4] % 12 for e in c if e[3] != 9]))
-            if tones_chord and len(c) > 1:
-                score.append(TMIDIX.ALL_CHORDS_SORTED.index(tones_chord) + 657)
-            dtime = max(0, min(127, c[0][1] - pc[0][1]))
+    
+            if tones_chord:
+    
+                if len(c) > 1:
+                    chord_tok = TMIDIX.ALL_CHORDS_SORTED.index(tones_chord)
+                    score.append(chord_tok+657) # Total vocab size 978
+    
+            dtime = max(0, min(127, c[0][1]-pc[0][1]))
+    
             if dtime != 0:
                 score.append(dtime)
+    
             abs_time += dtime
+    
             for e in c:
-                score.extend([max(1, min(127, e[2])) + 128, max(1, min(127, e[4])) + 256,
-                              max(1, min(127, e[5])) + 384, max(0, min(128, e[6])) + 512,
-                              max(0, min(15, e[3])) + 641])
+                score.extend([max(1, min(127, e[2]))+128, # Durs
+                              max(1, min(127, e[4]))+256, # Ptcs
+                              max(1, min(127, e[5]))+384, # Vels
+                              max(0, min(128, e[6]))+512, # Pats
+                              max(0, min(15, e[3]))+641   # Chans
+                              # Total 657
+                             ])
+    
                 pp_counter[(max(1, min(127, e[4])), max(0, min(128, e[6])))] += 1
+    
             pc = c
-
+    
+        #======================================================================================
+    
         features_counter = Counter(score)
         features_counter[978] = bad_chords_counter
         features_counter[979] = bars_count
-
-        final_dict = {'midi_path': str(input_midi)}
+    
+        #======================================================================================
+    
+        final_dict = dict_template
+        
         final_dict |= {k.lower().replace(' ', '_').replace('number_of_', ''): v for k, v in analysis}
-        for k in ('ticks_per_quarter_note', 'shortest_chord', 'longest_chord',
-                  'score_patches', 'score_pitches', 'score_tones', 'bad_chords'):
-            final_dict.pop(k, None)
+    
+        if 'ticks_per_quarter_note' in final_dict:
+            del final_dict['ticks_per_quarter_note']
+        if 'shortest_chord' in final_dict:
+            del final_dict['shortest_chord']
+        if 'longest_chord' in final_dict:
+            del final_dict['longest_chord']
+        if 'score_patches' in final_dict:
+            del final_dict['score_patches']
+        if 'score_pitches' in final_dict:
+            del final_dict['score_pitches']
+        if 'score_tones' in final_dict:
+            del final_dict['score_tones']
+        if 'bad_chords' in final_dict:
+            del final_dict['bad_chords']
+        
         final_dict['text_lyric_latin'] = final_dict.pop('all_text_and_lyric_events_latin', None)
+    
         final_dict['aligned'] = aligned
         final_dict['karaoke'] = karaoke
         final_dict['run_time'] = run_time
         final_dict['clean_midi'] = clean_midi
         final_dict['dupe_pitches'] = dupe_pitches
-        final_dict['bad_durs'] = bad_durs
+
+        bad_durs_stats["counts"] = dict(sorted(bad_durs_stats['count']))
+        bad_durs_stats.pop('count')
+        final_dict['bad_durs'] = bad_durs_stats
+
         final_dict['mono_mels'] = mono_mels
-        final_dict['features_counts'] = dict(features_counter.most_common())
-        final_dict['pitches_patches_counts'] = dict(pp_counter.most_common())
+        final_dict['features_counts'] = {k: v for k, v in features_counter.most_common()}
+        final_dict['pitches_patches_counts'] = {k: v for k, v in pp_counter.most_common()}
+
+        final_dict = dict(sorted(final_dict.items()))
         return (_md5_file(input_midi) or Path(input_midi).stem, final_dict)
+        
     except Exception:
         if os.environ.get('GMIDI_DEBUG'):
             traceback.print_exc()
@@ -1486,7 +1646,7 @@ def plot_title_card(stats, cfg, outdir):
     ms = stats['values'].get('run_time.total', {}).get('sum', 0)
     fig.text(0.5, 0.945, cfg.branding, ha='center', fontsize=30, fontweight='bold',
              color='white', path_effects=stroke)
-    fig.text(0.5, 0.905, 'F E A T U R E   S T A T I S T I C S', ha='center',
+    fig.text(0.5, 0.905, 'A  L I F E T I M E  O F  M U S I C', ha='center',
              fontsize=10.5, color='#c8cdd6', path_effects=stroke)
     ax.text(0, -0.30, human_big(notes), ha='center', va='center', fontsize=42,
             fontweight='bold', color='white', zorder=6, path_effects=stroke)
