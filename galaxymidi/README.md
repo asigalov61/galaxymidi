@@ -11,7 +11,7 @@
 
 ***
 
-## [UPDATE 11/01/2026] Due to unforeseen delays in obtaining all necessary permissions and licenses to release Galaxy MIDI Datase dataset, the release is postponed indefinitely. The release will be rescheduled as soon as these issues are resolved. Project Los Angeles sincerely apologizes for any inconveniences or imposiitons.
+## [UPDATE 11/01/2026] Due to unforeseen delays in obtaining all necessary permissions and licenses to release Galaxy MIDI Datase dataset, the release is postponed indefinitely. The release will be rescheduled as soon as these issues are resolved. Project Los Angeles sincerely apologizes for any inconveniences or impositions.
 
 ***
 
