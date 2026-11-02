@@ -1,19 +1,17 @@
 # Galaxy MIDI Dataset
 ## The largest and most comprehensive MIDI dataset in the known galaxy
 
-<p>
-  <img
-    src="https://asigalov61.github.io/countdown/countdown.svg"
-    alt="Galaxy MIDI Dataset countdown — Coming January 1, 2027"
-    width="100%"
-  />
-</p>
+<img width="1536" height="1024" alt="Galaxy-MIDI-Dataset" src="https://github.com/user-attachments/assets/a4f9fc8f-ee76-4b25-b6bf-9b83010156da" />
 
 ***
 
 ![License](https://img.shields.io/badge/License-CC--BY--NC--SA_4.0-lightgrey)
 ![File Type](https://img.shields.io/badge/Format-tar.gz-orange) ![Compressed Size](https://img.shields.io/badge/Compressed-154GB-red) ![Uncompressed Size](https://img.shields.io/badge/Uncompressed-330GB-blue)
 ![MIDI files](https://img.shields.io/badge/MIDI_files-19.8M-green)
+
+***
+
+## [UPDATE 11/01/2026] Due to unforeseen delays in obtaining all necessary permissions and licenses to release Galaxy MIDI Datase dataset, the release is postponed indefinitely. The release will be rescheduled as soon as these issues are resolved. Project Los Angeles sincerely apologizes for any inconveniences or imposiitons.
 
 ***
 
